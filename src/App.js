@@ -3,7 +3,7 @@ import Navhead from './components/Navhead';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import './App.css';
-import CreatePost from './components/create/create.post.component';
+import ImageUpload from './components/create/imageupload';
 
 class App extends React.Component {
   render(){
@@ -12,7 +12,7 @@ class App extends React.Component {
           <Navhead/>
           <Banner/>
           <div className="container">
-            <CreatePost/>
+            <ImageUpload/>
           </div>
           <Footer/>
         </div>
