@@ -2,7 +2,7 @@
   position: relative;
   height: 500px;
   overflow: hidden;
-  background: url('./image/banner.jpg') no-repeat center;
+  background: url('./photos/headerpic.jpg') no-repeat center;
   background-size: cover; 
 }
 
