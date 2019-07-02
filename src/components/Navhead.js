@@ -34,6 +34,7 @@ class Navhead extends React.Component {
       <div>
         <Router>
           <Navbar color="dark" dark expand="md">
+          <div className="container">
             <NavbarBrand href="/" >reactstrap</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
@@ -48,7 +49,7 @@ class Navhead extends React.Component {
                 <NavItem>
                   <Link to={'/'} >
                     <NavLink>
-                      kuy
+                      TWO
                     </NavLink>
                   </Link>
                 </NavItem>
@@ -71,6 +72,7 @@ class Navhead extends React.Component {
                 </UncontrolledDropdown>
               </Nav>
             </Collapse>
+            </div>
           </Navbar>
           <Switch> 
             <Route path='/post' component={ Posts } />
