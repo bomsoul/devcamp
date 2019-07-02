@@ -1,3 +1,7 @@
+html,body{
+  background-color: black;
+  color: white;
+}
 .hero-image{
   position: relative;
   height: 500px;
@@ -36,7 +40,4 @@
   font-size: 26px;
   text-shadow: 0 0 10px black;
   font-family: sans-serif;
-}
-.logo{
-  
 }

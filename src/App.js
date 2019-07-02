@@ -11,7 +11,9 @@ class App extends React.Component {
         <div>
           <Navhead/>
           <Banner/>
-          <CreatePost/>
+          <div className="container">
+            <CreatePost/>
+          </div>
           <Footer/>
         </div>
     );
