@@ -6,8 +6,10 @@ import './App.css';
 class App extends React.Component {
   render(){
     return (
-        <Navhead/>,
-        <Footer/>
+        <div>
+          <Navhead/>
+          <Footer/>
+        </div>
     );
   }
 }

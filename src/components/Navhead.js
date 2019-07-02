@@ -55,7 +55,8 @@ class Navhead extends React.Component {
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                    Login
+                    Login 
+                    <i class="fas fa-portrait"></i>
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
