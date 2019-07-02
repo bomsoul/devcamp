@@ -2,7 +2,7 @@
   position: relative;
   height: 500px;
   overflow: hidden;
-  background: url('./photos/headerpic.jpg') no-repeat center;
+  background: url('./photos/headerpic2.jpg') no-repeat center;
   background-size: cover; 
 }
 
@@ -36,4 +36,7 @@
   font-size: 26px;
   text-shadow: 0 0 10px black;
   font-family: sans-serif;
+}
+.logo{
+  
 }

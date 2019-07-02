@@ -35,7 +35,7 @@ class Navhead extends React.Component {
         <Router>
           <Navbar color="dark" dark expand="md">
           <div className="container">
-            <NavbarBrand href="/" >reactstrap</NavbarBrand>
+            <NavbarBrand href="/" >Release</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -49,7 +49,7 @@ class Navhead extends React.Component {
                 <NavItem>
                   <Link to={'/'} >
                     <NavLink>
-                      TWO
+                      Two
                     </NavLink>
                   </Link>
                 </NavItem>
