@@ -1,33 +1,39 @@
-.App {
+.hero-image{
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  background: url('./image/banner.jpg') no-repeat center;
+  background-size: cover; 
+}
+
+.banner-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+.banner-container h1{
+  font-size: 50px;
+  letter-spacing: 0.3em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner-container h1 span{
+  border: 10px solid white;
+  padding: 6px 14px;
+  display: inline-block;
+  font-family: sans-serif;
+}
+
+.des{
+  margin: 20px;
+  display: block;
+  font-size: 26px;
+  text-shadow: 0 0 10px black;
+  font-family: sans-serif;
 }
