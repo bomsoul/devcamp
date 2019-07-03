@@ -29,6 +29,7 @@ html,body{
 
 .banner-container h1 span{
   border: 10px solid white;
+  color : white;
   padding: 6px 14px;
   display: inline-block;
   font-family: sans-serif;
