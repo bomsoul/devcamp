@@ -14,6 +14,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 import Posts from './testcomponents/post.component';
+import SignIn from './auth/SignIn';
 
 class Navhead extends React.Component {
   constructor(props) {
@@ -60,7 +61,8 @@ class Navhead extends React.Component {
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
-                      Sign in
+
+                      <Link to="/login">SignIn</Link>
                     </DropdownItem>
                     <DropdownItem>
                       Sign up
@@ -77,6 +79,7 @@ class Navhead extends React.Component {
           </Navbar>
           <Switch> 
             <Route path='/post' component={ Posts } />
+            <Route path='/login' component={SignIn}/>
           </Switch>
         </Router>
       </div>
