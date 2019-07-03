@@ -16,6 +16,8 @@ import {
 import Posts from './testcomponents/post.component';
 import SignIn from './auth/SignIn';
 import Home from './Home';
+import SignUp from './auth/SignUp';
+import Test from './test';
 
 class Navhead extends React.Component {
   constructor(props) {
@@ -49,7 +51,7 @@ class Navhead extends React.Component {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to={'/'} >
+                  <Link to={'/test'} >
                     <NavLink>
                       Two
                     </NavLink>
@@ -66,7 +68,7 @@ class Navhead extends React.Component {
                       {/* <Link to="/login">SignIn</Link> */}
                     </DropdownItem>
                     <DropdownItem>
-                      Sign up
+                      <Link to="signup">SignUp</Link>
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
@@ -81,7 +83,9 @@ class Navhead extends React.Component {
           <Switch> 
             <Route exact path='/' component={ Home }/>
             <Route path='/post' component={ Posts } />
+            <Route path='/test' component={ Test } />
             <Route path='/login' component={ SignIn }/>
+            <Route path='/signup' component={ SignUp }/>
           </Switch>
         </Router>
       </div>

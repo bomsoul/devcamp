@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { declareVariable } from '@babel/types';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import firebase, { firestore } from 'firebase';
+const db =firebase.firestore();
+
+
 
  class SignIn extends React.Component {
     constructor(props){
@@ -26,10 +30,28 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
              [e.target.id]: e.target.value
         })
      }
+     
      handleSubmit = (e) =>{
         e.preventDefault();
-         console.log(this.state);
+
+        db.collection('user').get().then((snapshot)=>{
+            snapshot.forEach(doc=>{
+                    // fetchdata(data);
+                    console.log(doc.data());
+                    if(doc.data().email == this.state.email && doc.data().password == this.state.password){
+                        console.log("true")
+                        return 1;
+                    } 
+            })
+        
+        })
+        this.setState(prevState => ({
+            modal: !prevState.modal
+        }));
      }
+     
+
+   
     render() {
         return (
             <div>
@@ -54,7 +76,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
                 </div>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" onClick={this.toggle}>Login</Button>{' '}
+                    <Button color="primary" onClick={this.handleSubmit}>Login</Button>{' '}
                     <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                 </ModalFooter>
                 </Modal>
