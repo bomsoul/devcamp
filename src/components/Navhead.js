@@ -15,6 +15,7 @@ import {
   DropdownItem } from 'reactstrap';
 import Posts from './testcomponents/post.component';
 import SignIn from './auth/SignIn';
+import Home from './Home';
 
 class Navhead extends React.Component {
   constructor(props) {
@@ -78,8 +79,9 @@ class Navhead extends React.Component {
             </div>
           </Navbar>
           <Switch> 
+            <Route exact path='/' component={ Home }/>
             <Route path='/post' component={ Posts } />
-            <Route path='/login' component={SignIn}/>
+            <Route path='/login' component={ SignIn }/>
           </Switch>
         </Router>
       </div>

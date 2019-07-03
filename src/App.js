@@ -10,10 +10,9 @@ class App extends React.Component {
     return (
         <div>
           <Navhead/>
-          <Banner/>
-          <div className="container">
+          {/* <div className="container">
             <ImageUpload/>
-          </div>
+          </div> */}
           <Footer/>
         </div>
     );
