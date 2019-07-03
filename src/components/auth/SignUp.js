@@ -2,7 +2,6 @@ import React from 'react'
 import firebase from 'firebase';
 import ReactDOM from 'react-dom';
 const db=firebase.firestore(); //addfile
-const form = document.querySelector('#adduser');
    
 
 
