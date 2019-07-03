@@ -41,3 +41,11 @@ html,body{
   text-shadow: 0 0 10px black;
   font-family: sans-serif;
 }
+
+.color{
+  color: black;
+}
+
+.footer{
+  font-family: sans-serif;
+}

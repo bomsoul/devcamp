@@ -44,7 +44,7 @@ class Navhead extends React.Component {
                 <NavItem>
                   <Link to={'/post'} >
                     <NavLink>
-                      One
+                      Post
                     </NavLink>
                   </Link>
                 </NavItem>
@@ -57,13 +57,13 @@ class Navhead extends React.Component {
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                    Login 
-                    <i class="fas fa-portrait"></i>
+                    <i class="fas fa-sign-in-alt"></i>
+                    &nbsp;Login 
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
-
-                      <Link to="/login">SignIn</Link>
+                      <SignIn/>
+                      {/* <Link to="/login">SignIn</Link> */}
                     </DropdownItem>
                     <DropdownItem>
                       Sign up

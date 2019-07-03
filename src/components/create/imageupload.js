@@ -40,7 +40,7 @@ export default class ImageUpload extends React.Component{
             <div className="container" align="center">
             <progress value={this.state.progress} max="100"/>
                 <input type="file" onChange={this.handleChange}/>
-                <button onClick={this.handleUpload}>Upload</button>
+                <button onClick={this.handleUpload} className="btn btn-success">Upload</button>
             </div>
         )
     };
