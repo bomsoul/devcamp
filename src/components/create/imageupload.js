@@ -32,6 +32,8 @@ export default class ImageUpload extends React.Component{
             image:null,
             url: '',
             urllink: '',
+            name: '',
+            desc: '',
             progress:0
         }
         this.handleChange = this.handleChange.bind(this);
@@ -46,7 +48,14 @@ export default class ImageUpload extends React.Component{
             this.setState( () =>({image}));
         }
     }
+
+    handleNameChange = (e) =>{
+        this.state.name = e.target.value;
+    }
     
+    handleDescrip = (e) =>{
+        this.state.desc = e.target.value;
+    }
     handleUpload = () =>{
         const {image} = this.state;
         const uploadTask = storage.ref('images/'+image.name).put(image);
@@ -62,11 +71,12 @@ export default class ImageUpload extends React.Component{
                 console.log(url);
                 this.state.urllink = url.toString();
                 db.collection('picture').add({
-                    urls: this.state.urllink 
+                    urls: this.state.urllink,
+                    name: this.state.name,
+                    desc: this.state.desc
                 });
             })
         });
-       console.log(typeof(this.state.urllink));
     }
 
     render(){
@@ -84,7 +94,13 @@ export default class ImageUpload extends React.Component{
                 </p>
             </Dragger>
             <br></br>
-                <input type="file" onChange={this.handleChange}/>
+                <div className="form-group">
+                    <input type="file" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" onChange={this.handleNameChange}/>
+                </div>
+                <div className="from-group">
+                    <textarea onChange={this.handleDescrip} className="form-control" rows="5"></textarea>
+                </div>
                 <button onClick={this.handleUpload} className="btn btn-success">Upload</button>
             </div>
         )

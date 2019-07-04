@@ -55,3 +55,10 @@ html,body{
 .footer h3{
   color : white;
 }
+
+.card{
+  width:370px;
+}
+.card-text{
+  color: black;
+}

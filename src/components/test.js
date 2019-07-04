@@ -31,8 +31,20 @@ export default class Test extends React.Component{
         console.log(this.state.url);
         
         return(
-            <div className="Test">
-                {this.state.url.map((u , index)=> <img key={index} src={u.urls} alt="hello my image" />)}
+            <div className="container">
+                <div className="row">
+                {this.state.url.map((u , index)=> 
+                //<img key={index} src={u.urls} alt="hello my image" />
+                <div className="card">
+                    <img className="card-img-top"  key={index} src={u.urls} alt="Card image"/>
+                    <div className="card-body">
+                        <h4 className="card-title">{u.name}</h4>
+                        <p className="card-text">{u.desc}</p>
+                        <a href="#" className="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
+                )}
+                </div>
             </div>
         )
     }
