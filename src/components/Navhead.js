@@ -18,7 +18,7 @@ import SignIn from './auth/SignIn';
 import Home from './Home';
 import SignUp from './auth/SignUp';
 import Test from './test';
-
+import google from './auth/google'
 class Navhead extends React.Component {
   constructor(props) {
     super(props);
@@ -74,6 +74,7 @@ class Navhead extends React.Component {
                     <DropdownItem>
                       Reset
                     </DropdownItem>
+                      <Link to="google">Google</Link>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>
@@ -86,7 +87,8 @@ class Navhead extends React.Component {
             <Route path='/test' component={ Test } />
             <Route path='/login' component={ SignIn }/>
             <Route path='/signup' component={ SignUp }/>
-          </Switch>
+            <Route path='/google' component={google}/>
+                       </Switch>
         </Router>
       </div>
     );
