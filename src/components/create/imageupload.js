@@ -75,6 +75,7 @@ export default class ImageUpload extends React.Component{
                     name: this.state.name,
                     desc: this.state.desc
                 });
+                alert('Upload Complete!!')
             })
         });
     }
