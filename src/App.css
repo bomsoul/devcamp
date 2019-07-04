@@ -49,4 +49,9 @@ html,body{
 
 .footer{
   font-family: sans-serif;
+  color : white;
+}
+
+.footer h3{
+  color : white;
 }
