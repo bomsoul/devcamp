@@ -47,6 +47,10 @@ html,body{
   color: black;
 }
 
+.home-color{
+  color:white;
+}
+
 .footer{
   font-family: sans-serif;
   color : white;
@@ -54,4 +58,11 @@ html,body{
 
 .footer h3{
   color : white;
+}
+
+.card{
+  width:370px;
+}
+.card-text{
+  color: black;
 }
