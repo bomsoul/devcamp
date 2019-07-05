@@ -66,3 +66,7 @@ html,body{
 .card-text{
   color: black;
 }
+
+.footer{
+  font-size: 200%;
+}
