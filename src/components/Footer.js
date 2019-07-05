@@ -8,10 +8,10 @@ export default class Footer extends React.Component{
                 <h3>Created by: oldman development</h3>
                 <div class="d-flex justify-content-around">
                     <div className="p-2">
-                        Test
+                        <i class="fab fa-twitter"></i>
                     </div>
                     <div className="p-2">
-                        Test1
+                        <i class="fab fa-google-plus-square"></i>
                     </div>
                     <div className="p-2">
                         Test2

@@ -18,7 +18,7 @@ import SignIn from './auth/SignIn';
 import Home from './Home';
 import SignUp from './auth/SignUp';
 import Test from './test';
-
+import google from './auth/google'
 class Navhead extends React.Component {
   constructor(props) {
     super(props);
@@ -53,7 +53,7 @@ class Navhead extends React.Component {
                 <NavItem>
                   <Link to={'/test'} >
                     <NavLink>
-                      Two
+                      Show
                     </NavLink>
                   </Link>
                 </NavItem>
@@ -72,7 +72,7 @@ class Navhead extends React.Component {
                     </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                      Reset
+                      <Link to="google"><button className="btn btn-danger"><i class="fab fa-google"></i>oogle</button></Link>
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
@@ -86,6 +86,7 @@ class Navhead extends React.Component {
             <Route path='/test' component={ Test } />
             <Route path='/login' component={ SignIn }/>
             <Route path='/signup' component={ SignUp }/>
+            <Route path='/google' component={ google }/>
           </Switch>
         </Router>
       </div>

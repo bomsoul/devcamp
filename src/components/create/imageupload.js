@@ -4,42 +4,59 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import { Upload, Icon, message } from 'antd';
 import firebase from 'firebase';
+import {
+    Form,
+    Select,
+    InputNumber,
+    Switch,
+    Radio,
+    Slider,
+    Button,
+    Rate,
+    Checkbox,
+    Row,
+    Col,
+  } from 'antd';
+
+
 
 const db=firebase.firestore();
 
 const { Dragger } = Upload;
-const props = {
-    name: 'file',
-    multiple: true,
-    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-    onChange(info) {
-        const { status } = info.file;
-        if (status !== 'uploading') {
-          console.log(info.file, info.fileList);
-        }
-        if (status === 'done') {
-          message.success(`${info.file.name} file uploaded successfully.`);
-        } else if (status === 'error') {
-          message.error(`${info.file.name} file upload failed.`);
-        }
-      },
-}
+
+
 
 export default class ImageUpload extends React.Component{
     constructor(props){
         super(props);
+        this.toggle = this.toggle.bind(this);
+        const { Option } = Select;
+        
         this.state = { 
             image:null,
             url: '',
             urllink: '',
             name: '',
             desc: '',
-            progress:0
+            progress:0,
+            dropdownOpen: false,
+            champagne: ''            
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleUpload = this.handleUpload.bind(this);
+        this.handleChampagne = this.handleChampagne.bind(this);
+        
+
+        
+
     }
+    
     // uploadondb = ()=>{
+    toggle() {
+        this.setState(prevState => ({
+            dropdownOpen: !prevState.dropdownOpen
+        }));
+    }
         
     // }
     handleChange =(e)=>{
@@ -55,6 +72,10 @@ export default class ImageUpload extends React.Component{
     
     handleDescrip = (e) =>{
         this.state.desc = e.target.value;
+    }
+
+    handleChampagne = (e) => {
+        this.state.champagne = e.target.value;
     }
     handleUpload = () =>{
         const {image} = this.state;
@@ -73,7 +94,8 @@ export default class ImageUpload extends React.Component{
                 db.collection('picture').add({
                     urls: this.state.urllink,
                     name: this.state.name,
-                    desc: this.state.desc
+                    desc: this.state.desc,
+                    champagne: this.state.champagne
                 });
                 alert('Upload Complete!!')
             })
@@ -82,27 +104,28 @@ export default class ImageUpload extends React.Component{
 
     render(){
         return(
-            <div className="container" align="center">
-            <progress value={this.state.progress} max="100"/>
-            <Dragger {...props}>
-                <p className="ant-upload-drag-icon">
-                    <Icon type="inbox" />
-                </p>
-                <p className="ant-upload-text">Click or drag file to this area to upload</p>
-                <p className="ant-upload-hint">
-                    Support for a single or bulk upload. Strictly prohibit from uploading company data or other
-                    band files
-                </p>
-            </Dragger>
+            
+            <div className="container">
             <br></br>
                 <div className="form-group">
-                    <input type="file" onChange={this.handleChange}/>
-                    <input type="text" className="form-control" onChange={this.handleNameChange}/>
+                    <input type="file" onChange={this.handleChange} />
                 </div>
                 <div className="from-group">
-                    <textarea onChange={this.handleDescrip} className="form-control" rows="5"></textarea>
+                    <label align="left">Name the picture:</label>
+                    <input type="text" className="form-control" onChange={this.handleNameChange} placeholder="Name the picture"/>
+                    <br></br>
+                    <label align="left">Type the feeling:</label>
+                    <textarea onChange={this.handleDescrip} className="form-control" rows="5" placeholder="Description Here"></textarea>
+                    <br></br>
+                    <Select placeholder="Type" onClick={this.handleChampagne} >
+                        <Option value="test1"  >China</Option>
+                        <Option value="test2"> U.S.A</Option>
+                    </Select>
                 </div>
-                <button onClick={this.handleUpload} className="btn btn-success">Upload</button>
+                <br></br>
+                <div align="center">
+                    <button onClick={this.handleUpload} className="btn btn-success" >Upload</button>
+                </div>
             </div>
         )
     };
